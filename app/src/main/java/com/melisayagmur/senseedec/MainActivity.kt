@@ -1,5 +1,6 @@
 package com.melisayagmur.senseedec
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity(),TextToSpeech.OnInitListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        buttonGoToB.setOnClickListener {
+            val yeniIntent = Intent(this@MainActivity, ActivityB::class.java)
+            startActivity(yeniIntent)
+        }
 
         buttonSpeak = this.button_speak
         editText = this.edittext_input
